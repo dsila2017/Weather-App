@@ -9,9 +9,9 @@ import Foundation
 
 struct MainWeather: Codable {
     
-    var weather: [weatherModel]
-    var main: mainModel
-    var wind: windModel
+    var weather: [WeatherModel]
+    var main: MainModel
+    var wind: WindModel
     var name: String
 }
 
