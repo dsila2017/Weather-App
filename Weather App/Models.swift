@@ -23,7 +23,7 @@ struct WeatherModel: Codable {
 }
 
 struct MainModel: Codable {
-    
+    var temp: Double
     var feels_like: Double
     var humidity: Int
 }
