@@ -39,6 +39,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D05F9042965754100697173 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6324DC4B2964AAA500F6F60C /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D05F9052965754E00697173 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6324DC1B2964888700F6F60C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5D05F9062965755700697173 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6324DC1D2964888700F6F60C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6324DC0B2964888700F6F60C = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +84,9 @@
 			children = (
 				6324DC172964888700F6F60C /* AppDelegate.swift */,
 				6324DC192964888700F6F60C /* SceneDelegate.swift */,
-				6324DC4B2964AAA500F6F60C /* Models.swift */,
-				6324DC1B2964888700F6F60C /* ViewController.swift */,
-				6324DC1D2964888700F6F60C /* Main.storyboard */,
+				5D05F9042965754100697173 /* Model */,
+				5D05F9052965754E00697173 /* Controller */,
+				5D05F9062965755700697173 /* View */,
 				6324DC202964888800F6F60C /* Assets.xcassets */,
 				6324DC222964888800F6F60C /* LaunchScreen.storyboard */,
 				6324DC252964888800F6F60C /* Info.plist */,
@@ -291,7 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 25A9GC2B9J;
+				DEVELOPMENT_TEAM = N6PQF93RKP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Weather App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -304,7 +328,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lecture.Weather-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Weather-App177";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -319,7 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 25A9GC2B9J;
+				DEVELOPMENT_TEAM = N6PQF93RKP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Weather App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -332,7 +356,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lecture.Weather-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Weather-App177";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
