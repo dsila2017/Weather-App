@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var windSpeedLabel: UILabel!
     
+    var iconCode: String = "10d"
+    
     // MARK: - url
     var urlString: String  {
         get {
@@ -27,16 +29,21 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    // MARK: - iconUrlString
+    var iconUrlString: String {
+        get {
+        "https://openweathermap.org/img/wn/" + iconCode + "@2x.png"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
     }
     
-    func performRequest() {
-        guard let url = URL(string: urlString) else {
-            print(self.urlString)
+    func performRequest(getUrlString: String) {
+        guard let url = URL(string: getUrlString) else {
+            print(getUrlString)
             print("couldnt read url")
             return
             
@@ -62,12 +69,36 @@ class ViewController: UIViewController {
         textField.text = .none
     }
     
+    func performImageRequest(getUrlString: String) {
+        guard let url = URL(string: getUrlString) else {
+            print(getUrlString)
+            print("couldnt read url")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error {
+                print(error.localizedDescription)
+            }
+            guard let data else {return}
+            
+            DispatchQueue.main.async {
+                
+                self.iconImage.image = UIImage(data: data)
+            }
+    
+        }.resume()
+        textField.text = .none
+    }
+    
     func updateLabels(weatherData: MainWeather) {
         tempLabel.text = String(weatherData.main.temp) + "C"
         feelsLikeLabel.text = String(weatherData.main.feels_like)
         humidityLabel.text = String(weatherData.main.humidity)
         windSpeedLabel.text = String(weatherData.wind.speed)
         cityLabel.text = weatherData.name
+        iconCode = weatherData.weather.first!.icon
+        performImageRequest(getUrlString: iconUrlString)
     }
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
@@ -89,7 +120,7 @@ extension ViewController: UITextFieldDelegate {
     // if there is no text in the textfield, placeholder text changes 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
-            self.performRequest()
+            self.performRequest(getUrlString: urlString)
             textField.placeholder = "Enter city name.."
             return true
         } else {
