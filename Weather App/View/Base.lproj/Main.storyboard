@@ -212,7 +212,6 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="voz-db-eML" secondAttribute="trailing" constant="9" id="BoY-Uk-GjZ"/>
                                             <constraint firstItem="voz-db-eML" firstAttribute="centerY" secondItem="CRi-Bi-1Iz" secondAttribute="centerY" id="JmS-cY-JzC"/>
@@ -236,8 +235,8 @@
                         <outlet property="feelsLikeLabel" destination="x3e-xO-5Je" id="EA4-M3-DkX"/>
                         <outlet property="humidityLabel" destination="71f-hA-6ah" id="Vss-n6-sNE"/>
                         <outlet property="iconImage" destination="o6n-mR-hLT" id="3zG-V9-g76"/>
-                        <outlet property="mainTextField" destination="QFe-8D-1Hz" id="pp3-tv-mLP"/>
                         <outlet property="tempLabel" destination="rYu-wa-GrG" id="Tu4-a1-u60"/>
+                        <outlet property="textField" destination="QFe-8D-1Hz" id="pp3-tv-mLP"/>
                         <outlet property="windSpeedLabel" destination="dSp-d7-b2M" id="dgJ-Hw-i1C"/>
                     </connections>
                 </viewController>
@@ -249,9 +248,6 @@
     <resources>
         <image name="cloud.rain" catalog="system" width="126" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
