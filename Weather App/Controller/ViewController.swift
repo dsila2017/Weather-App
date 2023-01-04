@@ -36,8 +36,11 @@ class ViewController: UIViewController {
     
     func performRequest() {
         guard let url = URL(string: urlString) else {
+            print(self.urlString)
             print("couldnt read url")
-            return}
+            return
+            
+        }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error {
@@ -51,10 +54,12 @@ class ViewController: UIViewController {
                 }
                
             }else {
+                
                 print("couldn't decode data")
             }
     
         }.resume()
+        textField.text = .none
     }
     
     func updateLabels(weatherData: MainWeather) {
@@ -66,15 +71,30 @@ class ViewController: UIViewController {
     }
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        performRequest()
+        textField.endEditing(true)
     }
     
 }
 
+// MARK: - Extension textField Delegate
+
 extension ViewController: UITextFieldDelegate {
+    
+    // makes request when enter/go is pressed and hides the keyboard
     func textFieldShouldReturn (_ textField: UITextField) -> Bool {
-        self.performRequest()
-        
+        textField.endEditing(true)
         return true
+    }
+    
+    // if there is no text in the textfield, placeholder text changes 
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            self.performRequest()
+            textField.placeholder = "Enter city name.."
+            return true
+        } else {
+            textField.placeholder = "Type something"
+            return false
+        }
     }
 }
