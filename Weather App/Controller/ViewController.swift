@@ -43,10 +43,8 @@ class ViewController: UIViewController {
     
     func performRequest(getUrlString: String) {
         guard let url = URL(string: getUrlString) else {
-            print(getUrlString)
             print("couldnt read url")
             return
-            
         }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -59,12 +57,9 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.updateLabels(weatherData: result)
                 }
-               
             }else {
-                
                 print("couldn't decode data")
             }
-    
         }.resume()
         textField.text = .none
     }
@@ -81,21 +76,18 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
             }
             guard let data else {return}
-            
             DispatchQueue.main.async {
-                
                 self.iconImage.image = UIImage(data: data)
             }
-    
         }.resume()
         textField.text = .none
     }
     
     func updateLabels(weatherData: MainWeather) {
-        tempLabel.text = String(weatherData.main.temp) + "C"
-        feelsLikeLabel.text = String(weatherData.main.feels_like)
-        humidityLabel.text = String(weatherData.main.humidity)
-        windSpeedLabel.text = String(weatherData.wind.speed)
+        tempLabel.text = String(weatherData.main.temp) + "C˚"
+        feelsLikeLabel.text = String(weatherData.main.feels_like) + "˚"
+        humidityLabel.text = String(weatherData.main.humidity) + "%"
+        windSpeedLabel.text = String(weatherData.wind.speed) + "km/h"
         cityLabel.text = weatherData.name
         iconCode = weatherData.weather.first!.icon
         performImageRequest(getUrlString: iconUrlString)
