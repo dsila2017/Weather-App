@@ -50,16 +50,14 @@ class ViewController: UIViewController {
         searchBar.delegate = self
         middleStack.spacing = 9
         searchBarMiddle.constant = 0
-        
         animateStack()
-        //Looks for single or multiple taps.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
-        view.addGestureRecognizer(tap)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true) // to dismiss keyboard
+    }
+    
+    
     
     func animateStack() {
         UIView.animate(withDuration: 0.8, delay: 0.5, usingSpringWithDamping: 0.6,
@@ -70,11 +68,6 @@ class ViewController: UIViewController {
         }
     }
     
-    //Calls this function when the tap is recognized.
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
     
     func performRequest(getUrlString: String) {
         guard let url = URL(string: getUrlString) else {
@@ -131,6 +124,7 @@ class ViewController: UIViewController {
         performImageRequest(getUrlString: iconUrlString)
     }
     
+   
     func alert() {
         let refreshAlert = UIAlertController(title: "შეცდომა", message: "ასეთი ქალაქი ვერ მოიძებნა, გთხოვთ ქალაქი მოძებნოთ ჩვენს ბაზაში", preferredStyle: UIAlertController.Style.alert)
         
