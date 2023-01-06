@@ -9,6 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var searchBarMiddle: NSLayoutConstraint!
+    @IBOutlet weak var middleStack: UIStackView!
+    
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackMiddle: NSLayoutConstraint!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
@@ -42,7 +48,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        middleStack.spacing = 9
+        searchBarMiddle.constant = 0
         
+        animateStack()
         //Looks for single or multiple taps.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
@@ -50,6 +59,15 @@ class ViewController: UIViewController {
         //tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
+    }
+    
+    func animateStack() {
+        UIView.animate(withDuration: 0.8, delay: 0.5, usingSpringWithDamping: 0.6,
+                       initialSpringVelocity: 1) { [weak self] in
+            
+            self?.stackMiddle.constant = 0
+            self?.view.layoutIfNeeded()
+        }
     }
     
     //Calls this function when the tap is recognized.
