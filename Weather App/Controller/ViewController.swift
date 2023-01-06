@@ -9,6 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var searchBarMiddle: NSLayoutConstraint!
+    @IBOutlet weak var middleStack: UIStackView!
+    
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackMiddle: NSLayoutConstraint!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
@@ -42,21 +48,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        
-        //Looks for single or multiple taps.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
-        view.addGestureRecognizer(tap)
+        middleStack.spacing = 9
+        searchBarMiddle.constant = 0
+        animateStack()
     }
     
-    //Calls this function when the tap is recognized.
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true) // to dismiss keyboard
     }
+    
+    
+    
+    func animateStack() {
+        UIView.animate(withDuration: 0.8, delay: 0.5, usingSpringWithDamping: 0.6,
+                       initialSpringVelocity: 1) { [weak self] in
+            
+            self?.stackMiddle.constant = 0
+            self?.view.layoutIfNeeded()
+        }
+    }
+    
     
     func performRequest(getUrlString: String) {
         guard let url = URL(string: getUrlString) else {
@@ -113,6 +124,7 @@ class ViewController: UIViewController {
         performImageRequest(getUrlString: iconUrlString)
     }
     
+   
     func alert() {
         let refreshAlert = UIAlertController(title: "შეცდომა", message: "ასეთი ქალაქი ვერ მოიძებნა, გთხოვთ ქალაქი მოძებნოთ ჩვენს ბაზაში", preferredStyle: UIAlertController.Style.alert)
         

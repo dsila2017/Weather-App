@@ -41,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D0335372968B10200D72823 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				6324DC172964888700F6F60C /* AppDelegate.swift */,
+				6324DC192964888700F6F60C /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		5D05F9042965754100697173 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +94,7 @@
 		6324DC162964888700F6F60C /* Weather App */ = {
 			isa = PBXGroup;
 			children = (
-				6324DC172964888700F6F60C /* AppDelegate.swift */,
-				6324DC192964888700F6F60C /* SceneDelegate.swift */,
+				5D0335372968B10200D72823 /* Delegates */,
 				5D05F9042965754100697173 /* Model */,
 				5D05F9052965754E00697173 /* Controller */,
 				5D05F9062965755700697173 /* View */,

@@ -29,7 +29,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="126.66666666666667"/>
                                                         <subviews>
                                                             <searchBar contentMode="redraw" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKr-B5-t80">
-                                                                <rect key="frame" x="0.0" y="35.333333333333329" width="393" height="56"/>
+                                                                <rect key="frame" x="0.0" y="-214.66666666666666" width="393" height="56"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <scopeButtonTitles>
                                                                     <string>Title</string>
@@ -43,7 +43,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="AKr-B5-t80" secondAttribute="trailing" id="2Bb-ti-8JT"/>
                                                             <constraint firstItem="AKr-B5-t80" firstAttribute="leading" secondItem="EHI-Rr-wEG" secondAttribute="leading" id="Oi1-Zf-oVm"/>
-                                                            <constraint firstItem="AKr-B5-t80" firstAttribute="centerY" secondItem="EHI-Rr-wEG" secondAttribute="centerY" id="pOV-DL-zpj"/>
+                                                            <constraint firstItem="AKr-B5-t80" firstAttribute="centerY" secondItem="EHI-Rr-wEG" secondAttribute="centerY" constant="-250" id="pOV-DL-zpj"/>
                                                             <constraint firstItem="AKr-B5-t80" firstAttribute="centerX" secondItem="EHI-Rr-wEG" secondAttribute="centerX" id="vSw-aa-lvk"/>
                                                         </constraints>
                                                     </view>
@@ -62,14 +62,14 @@
                                                             <constraint firstItem="U0B-vd-MVn" firstAttribute="centerY" secondItem="uC9-Me-riH" secondAttribute="centerY" id="vc8-E3-n4P"/>
                                                         </constraints>
                                                     </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Pi-Ub5">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="500" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Pi-Ub5" userLabel="middle stack">
                                                         <rect key="frame" x="0.0" y="252.99999999999997" width="393" height="126.66666666666666"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIk-2C-0ZR" userLabel="ViewTemp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="126.66666666666667"/>
+                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIk-2C-0ZR" userLabel="ViewTemp">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="126.66666666666667"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C˚" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYu-wa-GrG">
-                                                                        <rect key="frame" x="75.333333333333329" y="43" width="41.333333333333329" height="40.666666666666657"/>
+                                                                        <rect key="frame" x="-20.666666666666668" y="43" width="41.333333333333336" height="40.666666666666657"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="o6n-mR-hLT">
-                                                                <rect key="frame" x="201" y="0.0" width="192" height="126.66666666666667"/>
+                                                                <rect key="frame" x="393" y="0.0" width="0.0" height="126.66666666666667"/>
                                                                 <color key="backgroundColor" red="0.32156863810000003" green="0.61568629740000003" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="tintColor" systemColor="tintColor"/>
                                                             </imageView>
@@ -102,7 +102,7 @@
                                         <rect key="frame" x="0.0" y="379.66666666666674" width="393" height="379.33333333333326"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="voz-db-eML">
-                                                <rect key="frame" x="9" y="134.66666666666669" width="375" height="110"/>
+                                                <rect key="frame" x="9" y="434.66666666666669" width="375" height="110.00000000000006"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wze-Wi-kHb">
                                                         <rect key="frame" x="0.0" y="0.0" width="115" height="110"/>
@@ -208,7 +208,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="voz-db-eML" secondAttribute="trailing" constant="9" id="BoY-Uk-GjZ"/>
-                                            <constraint firstItem="voz-db-eML" firstAttribute="centerY" secondItem="CRi-Bi-1Iz" secondAttribute="centerY" id="JmS-cY-JzC"/>
+                                            <constraint firstItem="voz-db-eML" firstAttribute="centerY" secondItem="CRi-Bi-1Iz" secondAttribute="centerY" constant="300" id="JmS-cY-JzC"/>
                                             <constraint firstItem="voz-db-eML" firstAttribute="leading" secondItem="CRi-Bi-1Iz" secondAttribute="leading" constant="9" id="aUl-fN-UFs"/>
                                         </constraints>
                                     </view>
@@ -229,7 +229,11 @@
                         <outlet property="feelsLikeLabel" destination="x3e-xO-5Je" id="EA4-M3-DkX"/>
                         <outlet property="humidityLabel" destination="71f-hA-6ah" id="Vss-n6-sNE"/>
                         <outlet property="iconImage" destination="o6n-mR-hLT" id="3zG-V9-g76"/>
+                        <outlet property="middleStack" destination="GoC-Pi-Ub5" id="GZQ-jD-Gar"/>
                         <outlet property="searchBar" destination="AKr-B5-t80" id="2Rl-g4-EgB"/>
+                        <outlet property="searchBarMiddle" destination="pOV-DL-zpj" id="70M-ow-UEn"/>
+                        <outlet property="stackMiddle" destination="JmS-cY-JzC" id="hcZ-pw-mp6"/>
+                        <outlet property="stackView" destination="voz-db-eML" id="1WM-DP-4Ti"/>
                         <outlet property="tempLabel" destination="rYu-wa-GrG" id="Tu4-a1-u60"/>
                         <outlet property="windSpeedLabel" destination="dSp-d7-b2M" id="dgJ-Hw-i1C"/>
                     </connections>
