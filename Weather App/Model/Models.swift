@@ -32,3 +32,14 @@ struct WindModel: Codable {
     
     var speed: Double
 }
+
+struct Cities: Codable {
+    
+    var data: [DataModel]
+}
+
+struct DataModel: Codable {
+    
+    var country: String
+    var cities: [String]
+}
