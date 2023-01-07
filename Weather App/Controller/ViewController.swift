@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var searchBarMiddle: NSLayoutConstraint!
     @IBOutlet weak var middleStack: UIStackView!
@@ -47,6 +50,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         searchBar.delegate = self
         middleStack.spacing = 9
         searchBarMiddle.constant = 0
@@ -180,3 +186,47 @@ extension ViewController: receiveCityProtocol {
         performRequest(getUrlString: urlString)
     }
 }
+
+extension ViewController {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      let currentLocation = locations.last!
+    //      print("Current location: \(currentLocation)")
+       let lat = currentLocation.coordinate.latitude
+        let lon = currentLocation.coordinate.longitude
+        let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=7d794f23b68cf9f043b0923eced7c96c&units=metric"
+
+        print("lat: \(lat), lon:  \(lon)")
+        
+        performRequest2(getUrlString: url)
+        locationManager.stopUpdatingLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+      print("Error finding location: \(error.localizedDescription)")
+    }
+    
+    func performRequest2(getUrlString: String) {
+        guard let url = URL(string: getUrlString) else {
+            print("couldnt read url")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error {
+                print(error.localizedDescription)
+            }
+            guard let data else {return}
+            
+            if let result = try? JSONDecoder().decode(MainWeather.self, from: data) {
+                DispatchQueue.main.async {
+                    self.updateLabels(weatherData: result)
+                }
+            }else {
+                print("couldn't decode data")
+              
+            }
+        }.resume()
+    }
+}
+

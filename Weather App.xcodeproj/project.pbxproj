@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		395677A22966804A00F3BEDF /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395677A12966804A00F3BEDF /* ViewController2.swift */; };
+		5D033568296A24E700D72823 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D033567296A24E700D72823 /* Networking.swift */; };
 		6324DC182964888700F6F60C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324DC172964888700F6F60C /* AppDelegate.swift */; };
 		6324DC1A2964888700F6F60C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324DC192964888700F6F60C /* SceneDelegate.swift */; };
 		6324DC1C2964888700F6F60C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324DC1B2964888700F6F60C /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		395677A12966804A00F3BEDF /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		5D033567296A24E700D72823 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		6324DC142964888700F6F60C /* Weather App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6324DC172964888700F6F60C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6324DC192964888700F6F60C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				5D05F9062965755700697173 /* View */,
 				6324DC202964888800F6F60C /* Assets.xcassets */,
 				6324DC222964888800F6F60C /* LaunchScreen.storyboard */,
+				5D033567296A24E700D72823 /* Networking.swift */,
 				6324DC252964888800F6F60C /* Info.plist */,
 			);
 			path = "Weather App";
@@ -179,6 +182,7 @@
 				395677A22966804A00F3BEDF /* ViewController2.swift in Sources */,
 				6324DC1C2964888700F6F60C /* ViewController.swift in Sources */,
 				6324DC182964888700F6F60C /* AppDelegate.swift in Sources */,
+				5D033568296A24E700D72823 /* Networking.swift in Sources */,
 				6324DC1A2964888700F6F60C /* SceneDelegate.swift in Sources */,
 				6324DC4C2964AAA500F6F60C /* Models.swift in Sources */,
 			);
